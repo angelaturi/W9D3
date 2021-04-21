@@ -25,3 +25,46 @@ li:hover {
 .o {
     background: white;
 } 
+
+.x:after, .o:after {
+    font-size: 60px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+
+}
+
+.x:after {
+    content: 'x';
+}
+
+.o:after {
+    content: 'o';
+}
+
+.game-over li {
+    color: red;
+}
+
+.winner-x .x, 
+.winner-o .o {
+    background-color: green;
+    color: white;
+}
+
+figcaption {
+    font-size: 30;
+    font-family: sans-serif;
+    font-weight: bold;
+
+
+}
+
+h1 {
+    font-size: 60;
+    font-family: sans-serif;
+    font-weight: bold;
+
+}
