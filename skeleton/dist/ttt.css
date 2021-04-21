@@ -15,5 +15,8 @@ ul li {
     border: 5px solid black;
     background: grey;
     display: block;
-    
+}
+
+li:hover {
+    background: yellow;
 }
