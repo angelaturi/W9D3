@@ -20,3 +20,8 @@ ul li {
 li:hover {
     background: yellow;
 }
+
+.x, 
+.o {
+    background: white;
+} 
