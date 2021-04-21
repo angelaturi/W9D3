@@ -4,6 +4,7 @@ class View {
     this.$el = $el;
 
     this.setupBoard();
+    this.bindEvents();
   }
 
   bindEvents() {
@@ -14,7 +15,7 @@ class View {
     //   this.game.playMove([1,1]);
     // }
     this.$el.on('click', 'li', (e) => {
-      $square = $(e.target);
+      let $square = $(e.currentTarget);
 
       this.makeMove($square);
     }) //determine what/how to access square
@@ -35,17 +36,19 @@ class View {
     }
 
     if (this.game.isOver()) {
-
-      
+      this.$el.off('click')
+      this.$el.addClass('game-over');
 
       const winner = this.game.winner();
       const $figcaption = $("<figcaption>")
 
       if (winner) {
-        $figcaption.html(`You win, ${winner}`)
+        this.$el.addClass(`winner-${winner}`);
+        $figcaption.html(`You win, ${winner}!`)
       } else {
         $figcaption.html("It's a draw!")
       }
+      this.$el.append($figcaption);
     } 
 
     // if (this.game.currentPlayer === 'X') {
