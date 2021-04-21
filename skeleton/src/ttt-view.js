@@ -34,6 +34,20 @@ class View {
       return;
     }
 
+    if (this.game.isOver()) {
+
+      
+
+      const winner = this.game.winner();
+      const $figcaption = $("<figcaption>")
+
+      if (winner) {
+        $figcaption.html(`You win, ${winner}`)
+      } else {
+        $figcaption.html("It's a draw!")
+      }
+    } 
+
     // if (this.game.currentPlayer === 'X') {
     //   $square.text('X');
     // } else {
